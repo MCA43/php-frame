@@ -6,6 +6,7 @@ class Controller
 {
     use Response, Request;
     protected $data = null;
+    public $view;
     public function __construct()
     {
         if (isset($_SESSION["csrf"])) {
@@ -13,10 +14,14 @@ class Controller
         } else {
             $this->data["csrf"] = $_SESSION["csrf"] = bin2hex(random_bytes(16));
         }
+
+        $this->view = new View();
     }
 
-    public function view(string $path, array $data = []): void
-    {
+    public function view(string $path, array $data = []) {
+
+        return $this->view->show($path, $data);
+
         $view = APP_ROOT . '/view/' . mb_strtolower($path, 'UTF-8') . '.php';
         if (file_exists($view)) {
             extract($data);

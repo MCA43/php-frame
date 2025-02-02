@@ -10,8 +10,6 @@ class BaseController extends Controller
     {
         $this->data["title"] = 'Admin Sayfası...';
 
-
-
-        $this->view("admin/index", $this->data);
+        echo $this->view("admin.index", $this->data);
     }
 }

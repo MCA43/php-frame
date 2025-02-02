@@ -6,11 +6,10 @@ use System\Engine\Controller;
 
 class BaseController extends Controller
 {
-    public function index(): void
-    {
-        $this->data["title"] = "Catalog index title";
 
+    public function index(): void {
+        $this->data["title"] = "Catalog Sayfası...";
 
-        $this->view("catalog/index", $this->data);
+        echo $this->view("catalog.index", $this->data);
     }
 }
