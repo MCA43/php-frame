@@ -7,6 +7,7 @@ require_once __DIR__ . '/config.php';
 require_once __DIR__ . '/system/engine/Autoloader.php';
 require_once __DIR__ . '/system/routing/Router.php';
 require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/helpers/MainHelper.php';
 
 
 use System\Engine\Autoloader;

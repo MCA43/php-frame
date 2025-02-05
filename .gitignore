@@ -1,2 +1,4 @@
+.gitignore
 .idea
-composer.lock
+composer.json
+vendor
