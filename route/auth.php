@@ -4,8 +4,8 @@ global $router;
 $router->get('/giris', [App\Auth\Controller\AuthController::class, 'loginForm'])->name('login');
 $router->post('/giris', [App\Auth\Controller\AuthController::class, 'login'])->name('login');
 
-$router->get('/oturum-ac', [App\Auth\Controller\AuthController::class, 'lockScreenForm'])->name('login');
-$router->post('/oturum-ac', [App\Auth\Controller\AuthController::class, 'lockScreen'])->name('login');
+$router->get('/oturum-ac', [App\Auth\Controller\AuthController::class, 'lockScreenForm'])->name('lockscreen');
+$router->post('/oturum-ac', [App\Auth\Controller\AuthController::class, 'lockScreen'])->name('lockscreen');
 
 $router->get('/kayit', [App\Auth\Controller\AuthController::class, 'registerForm'])->name('register');
 $router->post('/kayit', [App\Auth\Controller\AuthController::class, 'register'])->name('register');

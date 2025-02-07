@@ -2,6 +2,8 @@
 
 namespace System\Engine;
 
+use eftec\bladeone\BladeOne;
+
 class Controller
 {
     use Response, Request;
@@ -15,19 +17,10 @@ class Controller
             $this->data["csrf"] = $_SESSION["csrf"] = bin2hex(random_bytes(16));
         }
 
-        $this->view = new View();
     }
 
     public function view(string $path, array $data = []) {
-
-        return $this->view->show($path, $data);
-
-        $view = APP_ROOT . '/view/' . mb_strtolower($path, 'UTF-8') . '.php';
-        if (file_exists($view)) {
-            extract($data);
-            require_once($view);
-        } else {
-            throw new \Exception("view dosyası bulunamadı : " . $view);
-        }
+        $blade = new BladeOne(APP_ROOT . '/public/views' , APP_ROOT . '/public/cache', BladeOne::MODE_DEBUG);
+        return $blade->run($path, $data);
     }
 }

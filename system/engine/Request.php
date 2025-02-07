@@ -102,7 +102,7 @@ trait Request
     private function errorResponse(string $key): never
     {
         http_response_code(400);
-        echo json_encode(['error' => $key . ' : bulunamadı.']);
+        echo json_encode(['error' => $key . ' : bulunamadı.', 256]);
         exit;
     }
 }

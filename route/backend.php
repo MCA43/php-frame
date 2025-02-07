@@ -1,4 +1,4 @@
 <?php
 global $router;
 
-$router->name('dashboard.index')->get('/dashboard', [App\Admin\Controller\BaseController::class, 'index']);
+$router->get('/dashboard', [App\Admin\Controller\BaseController::class, 'index'])->name('dashboard.index')->middleware(['auth']);

@@ -5,6 +5,7 @@ namespace System\Middleware;
 class MiddlewareAlias
 {
     private static array $middlewareMap = [
+        'auth' => AuthMiddleware::class,
         'role' => RoleMiddleware::class,
         'permission' => PermissionMiddleware::class,
     ];
