@@ -1,0 +1,230 @@
+/*------------------------------------------------------------------
+Project:Team
+Author: The_Krishna        
+-------------------------------------------------------------------*/
+/*----------------Table of contents Start---------------------------
+1.Default css
+2.layout-1 section
+---------Table of contents End-----------------------------------*/
+/*------------------------ [Color codes] ------------------------                     
+Background: #dde9f8
+Content: #000  
+-------------------------------------------------------------------*/
+/************************ 1.Default css ***************************/
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    width: 100%;
+    height: 100%;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+a:focus, a {
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+svg {
+    vertical-align: middle;
+}
+input {
+    outline-width: 0;
+    outline-offset: 0;
+    outline: 0;
+    border: none;
+    outline: none;
+    width: 100%;
+}
+textarea {
+    outline-width: 0;
+    outline-offset: 0;
+    outline: 0;
+}
+ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+body {
+    font-family: "Jost", sans-serif;
+}
+.row {
+    --bs-gutter-x: 30px;
+}
+/* ------------- 1. layout-1 section ------------- */
+.team-section-1 {
+    padding: 100px 0;
+    background-image: url(../images/team-details-bg.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+    background-size: cover;
+}
+.team-check {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+.team-check span {
+    text-align: center;
+    display: block;
+    line-height: 38px;
+    font-weight: 600;
+    font-style: normal;
+    color: #191919;
+    font-size: 24px;
+}
+.team-details-info {
+    margin-bottom: 20px;
+}
+.team-details {
+    background: #FFFFFF;
+    box-shadow: 0px 40px 50px rgba(3, 8, 31, 0.12);
+    border-radius: 20px;
+    padding: 80px 105px 72px 90px;
+}
+.team-details-thumb {
+    flex: 0 0 auto;
+    margin-right: 40px;
+    width: 200px;
+}
+.team-details-thumb img {
+    height: auto;
+    max-width: 100%;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+.team-details-position {
+    font-weight: 500;
+    font-size: 16px;
+    color: #55585B;
+}
+.team-details-title {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 38px;
+    color: #191919;
+    margin-bottom: 15px;
+}
+.contact-info {
+    display: block;
+    font-weight: 400;
+    font-size: 14px;
+    color: #191919;
+}
+.contact-info span {
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 26px;
+    color: #010F1C;
+}
+.contact-info a {
+    font-size: 16px;
+    color: #191919;
+}
+.contact-info a:hover {
+    color: #0d6efd;
+    transition: all .35s ease-in-out;
+}
+.team-details-social {
+    margin-top: 30px;
+}
+.team-details-social a {
+    background: #FFFFFF;
+    border: 1px solid #E7E8EB;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 14px;
+    height: 36px;
+    width: 36px;
+    line-height: 36px;
+    text-align: center;
+    margin-right: 2px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: all .35s ease-in-out;
+}
+.team-details-social a i {
+    color: #010F1C;
+}
+.team-details-social a:hover {
+    background-color: #0d6efd;
+    transition: all .35s ease-in-out;
+    transform: translateY(-8px);
+}
+.team-details-social a:hover i {
+    color: #FFFFFF;
+    transition: all .35s ease-in-out;
+}
+.team-details-about {
+    margin-bottom: 20px;
+}
+.team-details-about-title {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 38px;
+    color: #191919;
+    margin-bottom: 10px;
+}
+.team-details-about p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    text-align: justify;
+    color: #010F1C;
+}
+.team-details-exprience-title {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 38px;
+    margin-bottom: 10px;
+    color: #191919;
+}
+.tp-el-bio-des {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    text-align: justify;
+    margin-bottom: 10px;
+    color: #010F1C;
+}
+.tp-el-bio-list {
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    margin-bottom: 8px;
+    padding-left: 12px;
+}
+.team-details-exprience ul {
+    margin: 0;
+    padding: 0;
+}
+.team-details-exprience ul li::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 4px;
+    border-radius: 50%;
+    background: #565764;
+}

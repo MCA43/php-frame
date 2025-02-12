@@ -1,5 +1,7 @@
 @extends('auth.layout')
 
+@section('title', 'Şifre Sıfırla')
+
 @section('content')
 
     <div class="screen">
@@ -9,7 +11,7 @@
                 <i class="fa fa-times" style="font-size: 20px; color: #fff"></i>
             </div>
 
-            <form action="" method="POST" id="form-lock-screen" class="mb-5">
+            <form action="{{ base_url('sifre-sifirla') }}" method="POST" id="form-lock-screen" class="mb-5">
 
                 <h2> Şifre Sıfırla </h2>
                 <p class="text-white mb-1"> Şifrenizi Güvenli Bir Şekilde Sıfırlayabilirsiniz. </p>

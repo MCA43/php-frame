@@ -1,6 +1,6 @@
 @extends('auth.layout')
 
-@section('title', 'Şifremi Unuttum | MCA Yazılım')
+@section('title', 'Şifremi Unuttum')
 
 @section('content')
 
@@ -11,7 +11,7 @@
                 <i class="fa fa-times" style="font-size: 20px; color: #fff"></i>
             </div>
 
-            <form action="" method="POST" id="form-lock-screen" class="mb-5">
+            <form action="{{ base_url('sifremi-unuttum') }}" method="POST" id="form-lock-screen" class="mb-5">
 
                 <h2> Şifremi Unuttum </h2>
 

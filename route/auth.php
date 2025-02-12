@@ -10,10 +10,10 @@ $router->post('/oturum-ac', [App\Auth\Controller\AuthController::class, 'lockScr
 $router->get('/kayit', [App\Auth\Controller\AuthController::class, 'registerForm'])->name('register');
 $router->post('/kayit', [App\Auth\Controller\AuthController::class, 'register'])->name('register');
 
-$router->get('/sifremi-unuttum', [App\Auth\Controller\PasswordController::class, 'index'])->name('password.forgot');
-$router->post('/sifremi-unuttum', [App\Auth\Controller\PasswordController::class, 'index'])->name('password.forgot');
+$router->get('/sifremi-unuttum', [App\Auth\Controller\PasswordController::class, 'passwordForgotForm'])->name('password.forgot');
+$router->post('/sifremi-unuttum', [App\Auth\Controller\PasswordController::class, 'passwordForgot'])->name('password.forgot');
 
-$router->get('/sifre-sifirla/{token}', [App\Auth\Controller\PasswordController::class, 'passwordResetForm'])->name('password.reset');
+$router->get('/sifre-sifirla/{token}', [App\Auth\Controller\PasswordController::class, 'passwordResetForm'])->params(['[a-zA-Z0-9]+'])->name('password.reset');
 $router->post('/sifre-sifirla', [App\Auth\Controller\PasswordController::class, 'passwordReset'])->name('password.reset');
 
 $router->get('/email-dogrula', [App\Auth\Controller\VerificationController::class, 'index'])->name('verification.notice');

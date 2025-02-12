@@ -11,12 +11,30 @@ class ComposerStaticInit1b17c056e610218c22d603d4cf232f1f
         array (
             'eftec\\bladeone\\' => 15,
         ),
+        'L' => 
+        array (
+            'League\\ColorExtractor\\' => 22,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
         'eftec\\bladeone\\' => 
         array (
             0 => __DIR__ . '/..' . '/eftec/bladeone/lib',
+        ),
+        'League\\ColorExtractor\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/league/color-extractor/src',
+        ),
+    );
+
+    public static $prefixesPsr0 = array (
+        'c' => 
+        array (
+            'claviska' => 
+            array (
+                0 => __DIR__ . '/..' . '/claviska/simpleimage/src',
+            ),
         ),
     );
 
@@ -29,6 +47,7 @@ class ComposerStaticInit1b17c056e610218c22d603d4cf232f1f
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit1b17c056e610218c22d603d4cf232f1f::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit1b17c056e610218c22d603d4cf232f1f::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit1b17c056e610218c22d603d4cf232f1f::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit1b17c056e610218c22d603d4cf232f1f::$classMap;
 
         }, null, ClassLoader::class);

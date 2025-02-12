@@ -1,5 +1,8 @@
 {
     "require": {
-        "eftec/bladeone": "^4.17"
+        "eftec/bladeone": "^4.17",
+      "ext-intl": "*",
+        "claviska/simpleimage": "^4.2",
+      "ext-mbstring": "*"
     }
 }

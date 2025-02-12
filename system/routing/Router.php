@@ -160,6 +160,7 @@ class Router
     protected function handleNotFound(): void
     {
         http_response_code(404);
+        header('Location: ' . APP_URL . '404');
         echo "404 Not Found";
     }
 

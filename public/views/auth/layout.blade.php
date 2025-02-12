@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title> @yield('title', 'Giriş | MCA Yazılım') </title>
+    <title> @yield('title', 'Giriş Yap') | PHP Frame </title>
 
     <!--  Favicon  -->
     <link rel="shortcut icon" type="image/x-icon" href="" />
@@ -42,8 +42,21 @@
 
 <!--  Custom JS  -->
 <script src="{{ assets('auth/js/custom.js') }}" type="text/javascript"></script>
-<script>
-    @if(isset($errors) && !empty($errors['message']))
+@include('auth.alert')
+<script type="text/javascript">
+    $(document).ready(function() {
+        @if(isset($success) && !empty($success['message']))
+        iziToast.success({
+            timeout: 5000,
+            title: 'İşlem Başarılı',
+            message: '{{ $success['message'] }}',
+            position: 'topRight',
+            color: '#00ff00'
+        })
+        var audio = new Audio('{{ uploads_url("audios/success.wav") }}');
+        audio.play();
+        @endif
+        @if(isset($errors) && !empty($errors['message']))
         iziToast.success({
             timeout: 5000,
             title: 'İşlem Başarısız',
@@ -54,7 +67,8 @@
         })
         var audio = new Audio('{{ uploads_url("audios/alert.wav") }}');
         audio.play();
-    @endif
+        @endif
+    });
 </script>
 @yield('page_script')
 

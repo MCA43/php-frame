@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'eftec\\bladeone\\' => array($vendorDir . '/eftec/bladeone/lib'),
+    'League\\ColorExtractor\\' => array($vendorDir . '/league/color-extractor/src'),
 );

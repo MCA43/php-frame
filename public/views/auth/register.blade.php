@@ -1,6 +1,6 @@
 @extends('auth.layout')
 
-@section('title', 'Kayıt Ol | MCA Yazılım')
+@section('title', 'Kayıt Ol')
 
 @section('content')
 
@@ -11,7 +11,7 @@
                 <i class="fa fa-times" style="font-size: 20px; color: #fff"></i>
             </div>
 
-            <form action="" method="POST" id="form-lock-screen" class="mb-5">
+            <form action="{{ base_url('kayit') }}" method="POST" id="form-lock-screen" class="mb-5">
 
                 <h2> Kayıt Ol </h2>
                 <p class="text-white mb-1"> Gerekli Alanları Doldurup Kayıt Olabilirsiniz. </p>
@@ -44,13 +44,13 @@
                 <div class="row mt-2 mb-4">
                     <div class="col-6">
                         <div class="form-check text-white">
-                            <input class="form-check-input" type="radio" name="gender" id="gender-male" value="male" checked>
+                            <input class="form-check-input" type="radio" name="gender" id="gender-male" value="man" checked>
                             <label class="form-check-label" for="gender-male"> Erkek </label>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="form-check text-white text-left">
-                            <input class="form-check-input" type="radio" name="gender" id="gender-female" value="female">
+                            <input class="form-check-input" type="radio" name="gender" id="gender-female" value="woman">
                             <label class="form-check-label" for="gender-female"> Kadın </label>
                         </div>
                     </div>

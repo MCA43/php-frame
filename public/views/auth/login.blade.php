@@ -1,5 +1,7 @@
 @extends('auth.layout')
 
+@section('title', 'Giriş Yap')
+
 @section('content')
 
     <div class="screen">
@@ -9,7 +11,7 @@
                 <i class="fa fa-times" style="font-size: 20px; color: #fff"></i>
             </div>
 
-            <form action="" method="POST" id="form-lock-screen" class="mb-5">
+            <form action="{{ base_url('giris') }}" method="POST" id="form-lock-screen" class="mb-5">
 
                 <h2> GİRİŞ YAP </h2>
 

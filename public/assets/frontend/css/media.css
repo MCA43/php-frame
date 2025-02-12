@@ -1,0 +1,68 @@
+@media (min-width: 1400px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 1290px;
+    }
+}
+@media (min-width:992px) and (max-width:1140px) {
+    .container {
+        width: 100%;
+    }
+    .team-section-1 {
+        padding: 80px 0;
+    }
+}
+@media (min-width:768px) and (max-width:992px) {
+    .team-section-1 {
+        padding: 60px 0;
+    }
+}
+@media (max-width:768px) {
+    .container {
+        width: 100%;
+    }
+    .team-section-1 {
+        padding: 30px 0;
+    }
+    .team-details-info {
+        margin-bottom: 20px;
+    }
+    .team-details {
+        padding: 15px;
+    }
+    .team-details-info {
+        flex-direction: column;
+    }
+    .team-details-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .team-details-thumb {
+        flex: 0 0 auto;
+        margin-right: 0px;
+        width: 200px;
+        margin-bottom: 25px;
+    }
+    .team-details-about {
+        margin-bottom: 25px;
+        text-align: center;
+    }
+    .tp-el-bio-list {
+        text-align: left;
+        font-size: 16px;
+    }
+    .team-details-exprience {
+        text-align: center;
+    }
+    .team-details-exprience-title {
+        margin-bottom: 5px;
+    }
+    .team-details-social {
+        margin-top: 10px;
+    }
+    .row {
+        --bs-gutter-x: 1.5rem;
+    }
+}

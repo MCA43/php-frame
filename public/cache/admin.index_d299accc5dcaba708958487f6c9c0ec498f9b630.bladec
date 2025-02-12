@@ -1,8 +1,104 @@
 <?php $_shouldextend[1]=1; ?>
 
 <?php $this->startSection('content'); ?>
+ <?php 
+ $admin = $_SESSION['user'];
+ ?>
 
- <h1> <?php echo \htmlentities($title??'', ENT_QUOTES, 'UTF-8', false); ?> </h1>
+ <section class="app-content">
+ <div class="row">
+ <div class="col-md-6 col-sm-6">
+ <div class="widget p-md clearfix">
+ <div class="pull-left">
+ <h3 class="widget-title"> PHP FRAME 'e Hoşgeldiniz </h3>
+ <small class="text-color"> Mücahit Cemal AY Tarafından Güncellendi </small>
+ </div>
+ </div>
+ </div>
+
+ <div class="col-md-6 col-sm-6">
+ <div class="widget p-md clearfix">
+ <div class="pull-left">
+ <h3 class="widget-title"> Sisteme Kayıtlı Kullanıcılar </h3>
+ <small class="text-color">
+ <a href="<?php echo \htmlentities(base_url('panel/kullanici/listesi')??'', ENT_QUOTES, 'UTF-8', false); ?>"> Kullanıcı Listesi </a>
+ </small>
+ </div>
+ <span class="pull-right fz-lg fw-500 counter" data-plugin="counterUp"> <?php echo \htmlentities($userCount ?? 0??'', ENT_QUOTES, 'UTF-8', false); ?> </span>
+ </div>
+ </div>
+ </div>
+
+ <div class="row">
+ <div class="col-md-12">
+ <div class="widget p-lg">
+ <div>
+ <h3 class="widget-title fz-lg text-primary m-b-lg"> PHP FRAME </h3>
+ <p class="m-b-lg">
+ <a href="http://github.com/elfesyaesen/php-frame/" target="_blank"> http://github.com/elfesyaesen/php-frame/ </a>
+ Adresindeki temel yapı üzerine geliştirilmiş başlangıç kiti.
+ </p>
+ <p class="fs-italic">
+ Hızlı bir şekilde proje geliştirmek için başlangıç kiti olarak hazırlandı.
+ </p>
+ </div>
+ </div>
+ </div>
+
+ <div class="col-md-12">
+ <div class="widget">
+ <header class="widget-header">
+ <h4 class="widget-title"> Log Kayıtları </h4>
+ </header>
+ <hr class="widget-separator"/>
+ <div class="widget-body">
+ <?php if(isset($logs) && count($logs) > 0): ?>
+ <div class="table-responsive">
+ <table id="default-datatable" data-plugin="DataTable" class="table table-striped" cellspacing="0" width="100%">
+ <thead>
+ <tr>
+ <th> Kullanıcı Adı </th>
+ <th class="text-center"> IP Adresi </th>
+ <th class="text-center"> Modül </th>
+ <th class="text-center"> İşlem </th>
+ <th> Açıklama </th>
+ <th> Tarih </th>
+ </tr>
+ </thead>
+ <tfoot>
+ <tr>
+ <th> Kullanıcı Adı </th>
+ <th class="text-center"> IP Adresi </th>
+ <th class="text-center"> Modül </th>
+ <th class="text-center"> İşlem </th>
+ <th> Açıklama </th>
+ <th> Tarih </th>
+ </tr>
+ </tfoot>
+ <tbody>
+ <?php $__currentLoopData = $logs; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $log): $loop = $this->incrementLoopIndices();  ?>
+ <tr>
+ <td class="text-primary"> <?php echo \htmlentities($admin['fullName']??'', ENT_QUOTES, 'UTF-8', false); ?> </td>
+ <td class="text-center"> <?php echo \htmlentities($log['ip_address']??'', ENT_QUOTES, 'UTF-8', false); ?> </td>
+ <td class="text-center"> <?php echo \htmlentities($log['module']??'', ENT_QUOTES, 'UTF-8', false); ?> </td>
+ <td class="text-center"> <?php echo get_log_action($log['action']); ?> </td>
+ <td> <?php echo $log['description']; ?> </td>
+ <td> <?php echo \htmlentities(get_date_time($log['created_at'])??'', ENT_QUOTES, 'UTF-8', false); ?> </td>
+ </tr>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </tbody>
+ </table>
+ </div>
+ <?php else: ?>
+ <div class="alert alert-info">
+ Log Kaydı Bulunamadı
+ </div>
+ <?php endif; ?>
+ </div>
+ </div>
+ </div>
+ </div>
 
 <?php $this->stopSection(); ?>
 <?php if (isset($_shouldextend[1])) { echo $this->runChild('admin.layouts.main'); } ?>

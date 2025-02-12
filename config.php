@@ -10,8 +10,8 @@ define('APP_URL', $base_url);
 define('APP_ROOT', dirname(__FILE__));
 define('APP_SUBFOLDER', '/php-frame');
 define('DB_HOST', 'localhost');
-define('DB_USER', 'mucahit');
-define('DB_PASS', '123456789');
+define('DB_USER', '');
+define('DB_PASS', '');
 define('DB_NAME', 'php-frame');
 define('DB_CHARSET', 'utf8');
 define('DB_OPTIONS', [

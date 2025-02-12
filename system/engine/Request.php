@@ -12,8 +12,7 @@ trait Request
     private array $put;
     private array $patch;
 
-    public function __construct()
-    {
+    public function __construct() {
         $this->server = $this->sanitize($_SERVER);
         $this->headers = $this->getHeaders();
         $this->get = $this->sanitize($_GET);
