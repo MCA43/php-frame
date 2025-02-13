@@ -15,7 +15,7 @@ function get_flash_data($key) {
 
 function assets(string $url) {
     if (!is_null($url)) {
-        $new_url = APP_URL . 'public/assets/' . $url;
+        $new_url = APP_URL . '/public/assets/' . $url;
         return $new_url;
     }
     return false;
@@ -23,18 +23,18 @@ function assets(string $url) {
 
 function uploads_url(string $url) {
     if (!is_null($url)) {
-        $new_url = APP_URL . 'public/uploads/' . $url;
+        $new_url = APP_URL . '/public/uploads/' . $url;
         return $new_url;
     }
     return false;
 }
 
-function xss_clear(string $data) {
-    return strip_tags(htmlspecialchars($data));
+function base_url(string $path) {
+    return APP_URL . '/' . $path;
 }
 
-function base_url(string $path) {
-    return APP_URL . $path;
+function xss_clear(string $data) {
+    return strip_tags(htmlspecialchars($data));
 }
 
 function random_string(int $n) {

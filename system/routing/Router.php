@@ -10,15 +10,13 @@ class Router
     protected array $routes = [];
     protected array $groups = [];
 
-    public function group(array $attributes, callable $callback): void
-    {
+    public function group(array $attributes, callable $callback): void {
         $this->groups[] = $attributes;
         $callback($this);
         array_pop($this->groups);
     }
 
-    public function get(string $uri, array $action): self
-    {
+    public function get(string $uri, array $action): self {
         return $this->addRoute('GET', $uri, $action);
     }
 
@@ -37,19 +35,19 @@ class Router
         return $this->addRoute('DELETE', $uri, $action);
     }
 
-    public function any(string $uri, array $action): self
-    {
+    public function any(string $uri, array $action): self {
         foreach (['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'] as $method) {
             $this->addRoute($method, $uri, $action);
         }
         return $this;
     }
 
-    protected function addRoute(string $method, string $uri, array $action): self
-    {
+    protected function addRoute(string $method, string $uri, array $action): self {
         $currentGroup = end($this->groups) ?: [];
         $prefix = $currentGroup['prefix'] ?? '';
+
         $uri = $prefix ? rtrim($prefix, '/') . '/' . ltrim($uri, '/') : $uri;
+        $uri = '/' . trim($uri, '/');
 
         $groupMiddleware = $currentGroup['middleware'] ?? [];
         $routeMiddleware = $action['middleware'] ?? [];
@@ -66,6 +64,7 @@ class Router
 
         return $this;
     }
+
 
     public function name(string $name): self
     {
@@ -93,10 +92,10 @@ class Router
         return $this;
     }
 
-    public function dispatch(string $uri, string $method): void
-    {
-        $uri = str_replace([basename($_SERVER['SCRIPT_NAME']), dirname($_SERVER['SCRIPT_NAME'])], '',$_SERVER['REQUEST_URI']);
-        $route = $this->findRoute($uri, $method);
+    public function dispatch(string $uri, string $method): void {
+        $uri = str_replace([basename($_SERVER['SCRIPT_NAME']), dirname($_SERVER['SCRIPT_NAME'])], '', $_SERVER['REQUEST_URI']);
+        $uri = ltrim($uri, '/');
+        $route = $this->findRoute((empty($uri) ? '/' : '/'.$uri), $method);
 
         if ($route) {
             $this->handleRoute($route, $this->extractParams($route, $uri));
@@ -160,7 +159,6 @@ class Router
     protected function handleNotFound(): void
     {
         http_response_code(404);
-        header('Location: ' . APP_URL . '404');
         echo "404 Not Found";
     }
 

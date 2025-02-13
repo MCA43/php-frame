@@ -1,4 +1,4 @@
 <?php
-require_once 'auth.php';
-require_once 'frontend.php';
-require_once 'backend.php';
+require_once __DIR__ . '/auth.php';
+require_once __DIR__ . '/frontend.php';
+require_once __DIR__ . '/backend.php';

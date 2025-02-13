@@ -9,7 +9,7 @@ function get_view_alert($url=null){
         "audio"     => "warning.wav"
     );
     set_flash_data("alert", $alert);
-    header("Location: ". APP_URL .$url);
+    header("Location: ". base_url($url));
     die();
 }
 
@@ -22,7 +22,7 @@ function get_write_alert($url=null){
         "audio"     => "warning.wav"
     );
     set_flash_data("alert", $alert);
-    header("Location: ". APP_URL .$url);
+    header("Location: ". base_url($url));
     die();
 }
 
@@ -35,7 +35,7 @@ function get_update_alert($url=null){
         "audio"     => "warning.wav"
     );
     set_flash_data("alert", $alert);
-    header("Location: ". APP_URL .$url);
+    header("Location: ". base_url($url));
     die();
 }
 
@@ -48,7 +48,7 @@ function get_delete_alert($url=null){
         "audio"     => "warning.wav"
     );
     set_flash_data("alert", $alert);
-    header("Location: ". APP_URL .$url);
+    header("Location: ". base_url($url));
     die();
 }
 
@@ -61,7 +61,7 @@ function get_success_alert($title="İşlem Başarılı", $url=null, $text=null, 
         "audio"     => $audio
     );
     set_flash_data("alert", $alert);
-    header("Location: ". APP_URL .$url);
+    header("Location: ". base_url($url));
     die();
 }
 
@@ -74,7 +74,7 @@ function get_error_alert($title="İşlem Başarısız!", $url=null, $text=null, 
         "audio"     => $audio
     );
     set_flash_data("alert", $alert);
-    header("Location: ". APP_URL .$url);
+    header("Location: ". base_url($url));
     die();
 }
 
@@ -87,7 +87,7 @@ function get_warning_alert($title="Sıkıntılı Bir Durum Var", $url=null, $tex
         "audio"     => $audio
     );
     set_flash_data("alert", $alert);
-    header("Location: ". APP_URL .$url);
+    header("Location: ". base_url($url));
     die();
 }
 
@@ -100,7 +100,7 @@ function get_info_alert($title="Bilgilendirme", $url=null, $text=null, $audio = 
         "audio"     => $audio
     );
     set_flash_data("alert", $alert);
-    header("Location: ". APP_URL .$url);
+    header("Location: ". base_url($url));
     die();
 }
 
@@ -124,7 +124,7 @@ function get_active_manager_alert($url=null){
         );
     }
     set_flash_data("alert", $alert);
-    header("Location: ". APP_URL .$url);
+    header("Location: ". base_url($url));
     die();
 }
 

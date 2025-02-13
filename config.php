@@ -1,14 +1,16 @@
 <?php
 session_start(); ob_start();
-$protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'https';
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'off') ? 'https' : 'http';
 $host = $_SERVER['HTTP_HOST'];
-$base_url = $protocol . '://' . $host . '/';
+$scriptPath = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME']));
+$base_url = 'https://' . $host . ($scriptPath === '/' ? '' : $scriptPath);
 
-//site name 
+//print_r('Protokol : '. $protocol . '<br> Host: ' . $host . '<br> Script Path: ' . $scriptPath . '<br> Base URL: ' . $base_url . '<br>');
+
+//site name
 define('APP_URL', $base_url);
 
 define('APP_ROOT', dirname(__FILE__));
-define('APP_SUBFOLDER', '/php-frame');
 define('DB_HOST', 'localhost');
 define('DB_USER', '');
 define('DB_PASS', '');
