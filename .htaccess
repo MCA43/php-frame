@@ -8,6 +8,12 @@
   Header set Referrer-Policy "no-referrer"
 </IfModule>
 
+# Blade dosyalarına doğrudan erişimi engelle
+<Files *.blade.php>
+    Order Allow,Deny
+    Deny from all
+</Files>
+
 ## Suppress mime type detection in browsers for unknown types and prevent FLOC
 <IfModule mod_headers.c>
   Header always set X-Content-Type-Options "nosniff"
